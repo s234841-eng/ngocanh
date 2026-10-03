@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Khám phá các dòng son chính hãng tại Pinky Beauty." />
+    <title>Sản phẩm | Pinky Beauty</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/product.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <span><i class="fa-solid fa-phone"></i> Hotline: 0946 721 311</span>
+        <span><i class="fa-solid fa-truck-fast"></i> Miễn phí vận chuyển từ 500.000đ</span>
+        <span><i class="fa-solid fa-circle-check"></i> 100% sản phẩm chính hãng</span>
+        <span><i class="fa-solid fa-gift"></i> Ưu đãi hấp dẫn mỗi ngày</span>
+      </div>
+    </div>
+    <header class="shop-header">
+      <div class="header-container">
+        <a href="index.html" class="shop-logo"><img src="assets/images/pinky-logo.svg" alt="Pinky Beauty &amp; Lipstick" /></a>
+        <form class="search-box" role="search" id="search-form">
+          <input id="search-input" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Tìm kiếm sản phẩm" />
+          <button type="submit" aria-label="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+        <a href="login.html" class="header-menu account-menu"><i class="fa-regular fa-user"></i><span>Tài khoản</span></a>
+        <a href="cart.html" class="header-menu cart-menu"><i class="fa-solid fa-cart-shopping"></i><span>Giỏ hàng</span></a>
+      </div>
+    </header>
+    <nav class="main-menu" aria-label="Điều hướng chính">
+      <ul>
+        <li><a href="index.html">TRANG CHỦ</a></li>
+        <li><a href="about.html">GIỚI THIỆU</a></li>
+        <li class="dropdown"><a href="product.html" aria-current="page">SẢN PHẨM <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#products" data-category="all">Tất cả sản phẩm</a></li>
+            <li><a href="#products" data-category="son-moi">Son môi</a></li>
+            <li><a href="#products" data-category="son-kem">Son kem</a></li>
+            <li><a href="#products" data-category="son-li">Son lì</a></li>
+            <li><a href="#products" data-category="son-bong">Son bóng</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">LIÊN HỆ</a></li>
+        <li><a href="blog.html">TIN TỨC</a></li>
+        <li><a href="blog.html">GÓC LÀM ĐẸP</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="product-banner">
+        <div class="product-banner-copy">
+          <span>PINKY BEAUTY</span>
+          <h1>Thế giới son môi</h1>
+          <p>Tìm sắc son dành riêng cho bạn — xinh đẹp trong từng khoảnh khắc.</p>
+        </div>
+        <div class="banner-decoration" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
+      </section>
+      <div class="product-breadcrumb"><a href="index.html">Trang chủ</a><i class="fa-solid fa-chevron-right"></i><span>Sản phẩm</span></div>
+
+      <section class="catalogue" id="products">
+        <aside class="catalogue-sidebar">
+          <div class="filter-panel">
+            <h2>Danh mục</h2>
+            <button class="category-filter active" data-category="all"><span>Tất cả sản phẩm</span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="category-filter" data-category="son-moi"><span>Son mới</span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="category-filter" data-category="son-kem"><span>Son kem</span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="category-filter" data-category="son-li"><span>Son lì</span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="category-filter" data-category="son-bong"><span>Son bóng</span><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          <div class="filter-note"><i class="fa-solid fa-heart"></i><h3>Chọn màu son yêu thích</h3><p>Chính hãng, tư vấn tận tâm và giao hàng nhanh chóng.</p></div>
+        </aside>
+
+        <div class="catalogue-content">
+          <div class="catalogue-heading">
+            <div><p class="eyebrow">BỘ SƯU TẬP CỦA CHÚNG TÔI</p><h2>Sản phẩm <span>nổi bật</span></h2><p class="result-count" id="result-count">13 sản phẩm dành cho bạn</p></div>
+            <label class="sort-control">Sắp xếp:
+              <select id="sort-select" aria-label="Sắp xếp sản phẩm">
+                <option value="featured">Nổi bật</option>
+                <option value="name">Tên A-Z</option>
+                <option value="price-asc">Giá tăng dần</option>
+                <option value="price-desc">Giá giảm dần</option>
+              </select>
+            </label>
+          </div>
+          <div class="product-grid" id="product-grid" aria-live="polite"></div>
+          <p class="empty-state" id="empty-state" hidden>Không tìm thấy sản phẩm phù hợp. Hãy thử từ khóa khác nhé.</p>
+          <div class="pagination" aria-label="Phân trang"><button class="page-button current" aria-current="page">1</button><button class="page-button" disabled>2</button><button class="page-button" disabled>3</button><button class="page-next" disabled aria-label="Trang tiếp theo"><i class="fa-solid fa-arrow-right"></i></button></div>
+        </div>
+      </section>
+
+      <section class="shop-policy">
+        <div class="policy-item"><i class="fa-solid fa-truck"></i><h3>GIAO HÀNG TOÀN QUỐC</h3><p>Giao hàng nhanh chóng và an toàn trên toàn quốc.</p></div>
+        <div class="policy-item"><i class="fa-solid fa-shield-halved"></i><h3>THANH TOÁN AN TOÀN</h3><p>Thông tin thanh toán của bạn luôn được bảo mật.</p></div>
+        <div class="policy-item"><i class="fa-solid fa-circle-check"></i><h3>SẢN PHẨM CHÍNH HÃNG</h3><p>Cam kết sản phẩm chính hãng và chất lượng.</p></div>
+        <div class="policy-item"><i class="fa-solid fa-headset"></i><h3>HỖ TRỢ KHÁCH HÀNG</h3><p>Luôn sẵn sàng tư vấn và giải đáp thắc mắc.</p></div>
+      </section>
+    </main>
+    <footer class="footer" id="contact">
+      <div class="footer-content">
+        <div class="footer-column"><h3>PINKY BEAUTY</h3><p>Chuyên cung cấp các sản phẩm son môi chính hãng và chất lượng.</p><p><i class="fa-solid fa-location-dot"></i> Đồng Tháp, Việt Nam</p><p><i class="fa-solid fa-phone"></i> 0946 721 311</p><p><i class="fa-solid fa-envelope"></i> pinkybeauty@gmail.com</p></div>
+        <div class="footer-column"><h3>THÔNG TIN</h3><a href="index.html">Trang chủ</a><a href="about.html">Giới thiệu</a><a href="product.html">Sản phẩm</a><a href="contact.html">Liên hệ</a><a href="blog.html">Tin tức</a></div>
+        <div class="footer-column"><h3>CHÍNH SÁCH</h3><a href="#returns">Chính sách đổi trả</a><a href="#shipping">Chính sách vận chuyển</a><a href="#privacy">Chính sách bảo mật</a><a href="#payment">Phương thức thanh toán</a></div>
+        <div class="footer-column"><h3>KẾT NỐI VỚI CHÚNG TÔI</h3><p>Theo dõi Pinky Beauty để cập nhật sản phẩm và ưu đãi mới nhất.</p><div class="social-icons"><a href="#facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#tiktok" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Pinky Beauty. All rights reserved.</p></div>
+    </footer>
+    <script src="assets/js/product.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thanh toán | Pinky Beauty</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/shop-flow.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+  <header class="flow-header"><a href="index.html"><img src="assets/images/pinky-logo.svg" alt="Pinky Beauty"></a><a href="cart.html"><i class="fa-solid fa-arrow-left"></i> Quay lại giỏ hàng</a></header>
+  <main class="flow-main">
+    <div class="flow-breadcrumb"><a href="cart.html">Giỏ hàng</a> / Thanh toán</div>
+    <h1 class="flow-title">Hoàn tất <span>đơn hàng</span></h1>
+    <div class="cart-layout checkout-layout">
+      <form class="checkout-form" id="checkout-form">
+        <section class="form-section">
+          <h2><span>1</span> Thông tin nhận hàng</h2>
+          <div class="form-grid">
+            <label>Họ và tên<input name="name" type="text" autocomplete="name" required placeholder="Nguyễn Văn A"></label>
+            <label>Số điện thoại<input name="phone" type="tel" autocomplete="tel" required pattern="[0-9+().\s-]{9,15}" placeholder="09xx xxx xxx"></label>
+            <label class="full-field">Email<input name="email" type="email" autocomplete="email" required placeholder="ban@email.com"></label>
+            <label class="full-field">Địa chỉ nhận hàng<input name="address" type="text" autocomplete="street-address" required placeholder="Số nhà, đường, phường/xã..."></label>
+            <label>Tỉnh / Thành phố<input name="city" type="text" autocomplete="address-level1" required placeholder="Tỉnh / thành phố"></label>
+            <label>Ghi chú<input name="note" type="text" placeholder="Ghi chú cho đơn hàng (nếu có)"></label>
+          </div>
+        </section>
+        <section class="form-section">
+          <h2><span>2</span> Phương thức thanh toán</h2>
+          <label class="payment-option"><input type="radio" name="payment" value="cod" checked><span><strong>Thanh toán khi nhận hàng (COD)</strong><small>Thanh toán khi đơn hàng được giao đến bạn</small></span><i class="fa-solid fa-money-bill-wave"></i></label>
+          <label class="payment-option"><input type="radio" name="payment" value="bank-transfer"><span><strong>Chuyển khoản ngân hàng</strong><small>Thông tin chuyển khoản sẽ được cung cấp sau</small></span><i class="fa-solid fa-building-columns"></i></label>
+        </section>
+        <button type="submit" class="primary-button place-order"><i class="fa-solid fa-lock"></i> Đặt hàng</button>
+        <p class="form-message" id="checkout-message" role="status" aria-live="polite"></p>
+      </form>
+      <aside class="summary-card">
+        <h2>Đơn hàng của bạn</h2>
+        <div class="checkout-item"><img src="assets/images/sanpham/sp1.png" alt=""><span>Son Romand Juicy Lasting Tint <small>× 1</small></span><strong>189.000₫</strong></div>
+        <div class="checkout-item"><img src="assets/images/sanpham/sp2.png" alt=""><span>Son 3CE Velvet Lip Tint <small>× 1</small></span><strong>299.000₫</strong></div>
+        <p><span>Vận chuyển</span><strong>Miễn phí</strong></p>
+        <div class="summary-total"><span>Tổng thanh toán</span><strong>488.000₫</strong></div>
+        <p class="secure-note"><i class="fa-solid fa-shield-halved"></i> Thông tin của bạn được bảo mật</p>
+      </aside>
+    </div>
+  </main>
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>
